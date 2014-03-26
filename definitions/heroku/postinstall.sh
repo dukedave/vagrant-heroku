@@ -91,7 +91,7 @@ echo "su -c '/usr/bin/pg_ctl start -l /var/pgsql/data/log/logfile -D /var/pgsql/
 # Install NodeJs for a JavaScript runtime
 git clone https://github.com/joyent/node.git
 cd node
-git checkout v0.4.7
+git checkout v0.10.26
 ./configure --prefix=/usr
 make
 make install
