@@ -98,6 +98,9 @@ make install
 cd ..
 rm -rf node*
 
+# Install Redis
+apt-get install -y redis-server
+
 # Add /opt/ruby/bin to the global path as the last resort so
 # Ruby, RubyGems, and Chef/Puppet are visible
 echo 'PATH=$PATH:/opt/ruby/bin' > /etc/profile.d/vagrantruby.sh
