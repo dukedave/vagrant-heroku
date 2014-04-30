@@ -67,7 +67,7 @@ echo "source /usr/local/bin/virtualenvwrapper.sh" >> /home/vagrant/.bashrc
 wget http://ftp.postgresql.org/pub/source/v9.3.3/postgresql-9.3.3.tar.bz2
 tar jxf postgresql-9.3.3.tar.bz2
 cd postgresql-9.3.3
-./configure --prefix=/usr
+./configure --prefix=/usr --with-openssl
 make world
 make install-world
 cd ..
