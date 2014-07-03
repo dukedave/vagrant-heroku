@@ -81,6 +81,10 @@ su -c "/usr/bin/initdb -D /var/pgsql/data --locale=en_US.UTF-8 --encoding=UNICOD
 mkdir /var/pgsql/data/log
 chown postgres /var/pgsql/data/log
 
+# Allow connection from host machine
+su -c "echo \"listen_addresses = '*'\" >> /var/pgsql/data/postgresql.conf" postgres
+su -c "sed -i \"s/127.0.0.1\/32/all/\" /var/pgsql/data/pg_hba.conf" postgres
+
 # Start postgres
 su -c '/usr/bin/pg_ctl start -l /var/pgsql/data/log/logfile -D /var/pgsql/data' postgres
 
